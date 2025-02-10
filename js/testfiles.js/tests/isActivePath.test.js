@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import isActivePath from "./isActivePath.js";
+import isActivePath from "../isActivePath.js";
 
 // Gruppere relaterte tester:
 

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import getUserName from "../utils/getUseName";
+import getUserName from "../../utils/getUseName";
 
 describe("getUserName", () => {
   // Før hver test, mock localStorage

@@ -1,9 +1,5 @@
 // @ts-check
-const { test, expect } = require("@playwright/test");
-
-test.beforeEach(async ({ page }) => {
-  await page.goto("https://demo.playwright.dev/todomvc");
-});
+import { test, expect } from "@playwright/test";
 
 const TODO_ITEMS = [
   "buy some cheese",
