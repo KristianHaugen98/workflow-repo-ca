@@ -1,4 +1,7 @@
-// Definerer og eksporterer funsjonen
 export default function isActivePath(currentPath, href) {
-  return currentPath === href; // Sammenligner currentPatch med href og returnerer true eller false
+  if (currentPath === href) return true;
+  if (href === "/" && (currentPath === "/" || currentPath === "/index.html"))
+    return true;
+  if (currentPath.startsWith(href + "/")) return true; // dette sikrer at det er en sti.
+  return false;
 }

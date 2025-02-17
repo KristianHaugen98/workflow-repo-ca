@@ -6,12 +6,22 @@ import isActivePath from "../isActivePath.js";
 describe("isActivePath", () => {
   // Dette spesiferer en spesifik test:
   it("should return true when currentPath matches href", () => {
-    const currentPath = "/home";
-    const href = "/home";
+    expect(isActivePath("/home", "/home")).toBe(true);
+  });
 
-    const result = isActivePath(currentPath, href);
+  it("should return true when currentPath is '/' and href is '/'", () => {
+    expect(isActivePath("/", "/")).toBe(true);
+  });
 
-    // Sjekker forventet resultat:
-    expect(result).toBe(true);
+  it("should return true when currentPath is '/index.html' and href is '/'", () => {
+    expect(isActivePath("/index.html", "/")).toBe(true);
+  });
+
+  it("should return true when currentPath starts with href followed by slash", () => {
+    expect(isActivePath("/about/team", "/about")).toBe(true);
+  });
+
+  it("should return false when currentPath is a similar but different path", () => {
+    expect(isActivePath("/contact", "/about")).toBe(false);
   });
 });
