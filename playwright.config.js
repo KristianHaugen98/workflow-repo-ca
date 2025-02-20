@@ -11,8 +11,8 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./js/testfiles.js",
-  testMatch: "**/*.spec.js", // Søk etter filer som slutter med .spec.js
+  testDir: "tests/e2e",
+  testMatch: "**/*.test.js", // Søk etter filer som slutter med .test.js
   testIgnore: "**/demo-todo-app.spec.js/**",
   /* Run tests in files in parallel */
   fullyParallel: true,
